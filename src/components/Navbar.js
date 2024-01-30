@@ -45,7 +45,7 @@ function Navbar() {
 
       <ul className="header-nav">
         <li>
-          <a href="">Каталог</a>
+          <a href="#catalog">Каталог</a>
         </li>
         <li>
           <a href="">Про нас</a>

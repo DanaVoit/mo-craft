@@ -141,12 +141,25 @@ button {
 
 //Catalog
 
-.catalog{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+.catalog{ 
   margin-top: 30px;
+
+  &-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+  }
+ 
+  &-nav{
+    display: flex;
+    justify-content: center;
+     & button{
+      margin-right: 25px;
+     }
+  }
 
   &-item{
     background-color: $gray;
@@ -195,6 +208,7 @@ button {
         & button{
           background-color: $gray;
           color: $white-txt;
+          border: none;
         }
         & .catalog-item-price{
             color: $primary
