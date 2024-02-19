@@ -156,9 +156,18 @@ button {
   &-nav{
     display: flex;
     justify-content: center;
-     & button{
-      margin-right: 25px;
+    margin: 50px 0;
+    &-item{
+      padding: 30px 40px;
+      background-color: $gray;
+      border: 1px solid $primary;
+      display: flex;
+      flex-direction: column;
+     & + .active{
+      background-color: $accent;
      }
+      
+    }
   }
 
   &-item{
