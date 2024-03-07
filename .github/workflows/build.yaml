@@ -1,5 +1,4 @@
-name: MO CI/CD
-run-name: ${{ github.actor }} running CI process
+name: Build
 on: [push]
 jobs:
   build:
