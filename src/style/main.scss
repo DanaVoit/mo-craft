@@ -27,7 +27,7 @@ body {
 
 //button
 
-button {
+.button {
   background-color: $gray;
   padding: 17px 27px;
   border: none;
@@ -46,12 +46,11 @@ button {
     padding: 15px;
   }
 
-  &:hover{
+  &:hover {
     border: 1px solid $accent;
     padding: 16px 26px;
   }
 }
-
 
 //Header
 .header {
@@ -105,123 +104,114 @@ button {
   }
 }
 
+//About
 
-//About 
+.about {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 
+  margin-top: 55px;
 
-.about{
+  &-info {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    
-    margin-top: 55px;
-
-    &-info{
-        display: flex;
-        flex-direction: column;
-        margin-left: 100px;
-        &-title{
-            font-size: 40px;
-            font-style: italic;
-            font-weight: 600;
-            line-height: normal;
-            font-family: "Raleway", sans-serif;
-            color: $accent;
-            margin-bottom: 50px;
-            
-        }
-        &-txt{
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 155%;
-        }
+    flex-direction: column;
+    margin-left: 100px;
+    &-title {
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: normal;
+      font-family: "Raleway", sans-serif;
+      color: $accent;
+      margin-bottom: 50px;
     }
+    &-txt {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 155%;
+    }
+  }
 }
 
 //Catalog
 
-.catalog{ 
+.catalog {
   margin-top: 30px;
 
-  &-list{
+  &-list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+   justify-content: space-around;
+   align-items: baseline;
     margin-top: 30px;
-    
   }
- 
-  &-nav{
+
+  &-nav {
     display: flex;
     justify-content: center;
     margin: 50px 0;
-    &-item{
+    &-item {
       padding: 30px 40px;
       background-color: $gray;
       border: 1px solid $primary;
       display: flex;
       flex-direction: column;
-     & + .active{
-      background-color: $accent;
-     }
-      
+      max-width: 150px;
+
+      & + .active {
+        background-color: $accent;
+      }
     }
   }
 
-  &-item{
-    background-color: $gray;
+  &-item {
+    // background-color: $gray;
     padding: 30px;
     border-radius: 14px;
     margin-bottom: 30px;
     max-width: 370px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    &-image{
+    &-div-img{
+      
+    }
+    &-image {
       width: 300px;
-      height: 300px;
-      background-color: $primary;
+      height: auto;
       display: block;
       margin-bottom: 30px;
     }
 
-    &-title{
+    &-title {
       text-transform: uppercase;
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-          }
-
-      &-price{
-        color: $accent;
-        margin: 10px 0;
-        font-size: 25px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-
-      }
-      
-      & button{
-        background-color: $accent;
-      }
-
-
-      &:hover{
-        background-color: $accent;
-        color: $primary;
-       
-
-        & button{
-          background-color: $gray;
-          color: $white-txt;
-          border: none;
-        }
-        & .catalog-item-price{
-            color: $primary
-        }
-      }
     }
+
+    &-price {
+      color: $accent;
+      margin: 10px 0;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    & a {
+      background-color: $accent;
+ 
+     border: none;
+     &:hover{
+      border: 1px solid $accent;
+      padding: 16px 26px;
+     }
+    }
+
+    
+  }
 }

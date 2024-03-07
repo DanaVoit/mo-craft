@@ -29,7 +29,7 @@ function Navbar() {
         </a>
         
         <span className="header-logo-title">
-          ProMed{" "}
+          MO Craft{" "}
         </span>
       </div>
       <Button text="Contact Us"></Button>
@@ -44,14 +44,14 @@ function Navbar() {
       </div>
 
       <ul className="header-nav">
-        <li>
+        {/* <li>
           <a href="#catalog">Каталог</a>
         </li>
         <li>
           <a href="">Про нас</a>
-        </li>
+        </li> */}
       </ul>
-      <Button text="Напиши нам"></Button>
+      <a className="button" href="https://linktr.ee/mykolabms?fbclid=IwAR2QkY5twHhM8sxCaaVCwG8PhdH_upFxFDYUDKRGpB5WbXe0q2Fpfr5Zs-I">Напиши нам</a>
     </header>
   );
 }

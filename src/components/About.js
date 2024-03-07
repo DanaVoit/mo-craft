@@ -1,16 +1,30 @@
-import about from "../assets/img/about.png"
+import about from "../assets/img/ome.jpg";
 
-export default function About(){
-
-
-    return(
-
-        <div className="container about">
-            <img src={about} width={400}/>
-            <div className="about-info">
-                <h3 className="about-info-title">твій стиль - твої правила</h3>
-                <p className="about-info-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-            </div>
-        </div>
-    )
+export default function About() {
+  return (
+    <div className="container about">
+      <img src={about} width={600} height={800} />
+      <div className="about-info">
+        <h3 className="about-info-title">твій стиль - твої правила</h3>
+        <p className="about-info-txt">
+          Зустрічайте M&O Craft - там, де любов перетворюється на мистецтво.
+          <p>
+            🌟 Ми, Микола та Оксана, засновники сімейної майстерні, яка виросла
+            з наших спільних мрій і прагнень. З кожним шматком шкіри, з кожним
+            стібком нитки, ми вкладаємо частинку нашої душі, щоб створювати не
+            просто речі, а спогади, які зігрівають серце.
+          </p>
+          🎁 Сьогодні M&O Craft це не просто вироби з натуральної шкіри. Це -
+          емоції, які ми даруємо кожному, хто цінує ручну роботу і тепло
+          сімейних традицій. Від документоорганайзерів до ексклюзивних
+          аксесуарів - кожна річ створена з любов’ю та турботою.
+          <p>
+            🌍 Живучи та працюючи у Польщі, ми, разом з нашим маленьким
+            помічником, прагнемо дарувати гарні емоції всім, хто бажає отримати
+            частинку нашого сімейного тепла.{" "}
+          </p>
+        </p>{" "}
+      </div>
+    </div>
+  );
 }

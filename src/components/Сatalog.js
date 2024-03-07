@@ -1,6 +1,6 @@
 import catalog from "../components/data/catalog.json";
 import { useState, useEffect } from "react";
-import nav1 from "../assets/img/nav1.png";
+
 
 export default function Catalog() {
   const [filter, setFilter] = useState("all");
@@ -30,7 +30,7 @@ export default function Catalog() {
           className={`catalog-nav-item ${filter === "ремені" ? "active" : ""}`}
           onClick={() => handleFilterChange("ремені")}
         >
-          Ремені <img src={nav1} width={70} />
+          Ремені
         </a>
         <a
           className={`catalog-nav-item ${filter === "гаманці" ? "active" : ""}`}
@@ -39,24 +39,24 @@ export default function Catalog() {
           Гаманці
         </a>
         <a
-          className={`catalog-nav-item ${filter === "інше" ? "active" : ""}`}
-          onClick={() => handleFilterChange("інше")}
+          className={`catalog-nav-item ${filter === "сумка" ? "active" : ""}`}
+          onClick={() => handleFilterChange("сумка")}
         >
-          Інше
+          Сумки
         </a>
       </div>
 
       <ul className="catalog-list">
         {filteredProducts().map((product) => (
           <li key={product.id} className="catalog-item">
-            <div className="catalog-item-image">
-              <img src={product.image} alt={product.title} />
+            <div className="catalog-item-div-img"  >
+              <img className="catalog-item-image" src={product.image}  alt={product.title} />
             </div>
             <div className="catalog-item-info">
               <h3 className="catalog-item-title">{product.title}</h3>
-              <p className="catalog-item-price">${product.price}</p>
+              <p className="catalog-item-price">{product.price}</p>
             </div>
-            <button>Детальніше</button>
+            <button className="button">Детальніше</button>
           </li>
         ))}
       </ul>
