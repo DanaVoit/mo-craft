@@ -1,0 +1,8 @@
+name: MO CI/CD
+run-name: ${{ github.actor }} running CI process
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build
