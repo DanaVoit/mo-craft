@@ -6,14 +6,20 @@
 
 .container {
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1200px;
 
   @include breakpoint($mobile-bp) {
+    max-width: 800px;
     padding: 15px;
   }
 
   @include breakpoint($tablet-bp) {
     padding: 35px;
+  }
+
+  @include breakpoint($big-screen-bp) {
+    max-width: 1200px;
+    padding: 15px;
   }
 }
 
@@ -26,7 +32,6 @@ body {
 }
 
 //button
-
 .button {
   background-color: $gray;
   padding: 17px 27px;
@@ -37,18 +42,16 @@ body {
   font-weight: 600;
 
   @include breakpoint($mobile-bp) {
-    font-size: 18px;
-    padding: 11px;
   }
 
   @include breakpoint($tablet-bp) {
-    font-size: 20px;
-    padding: 15px;
+    font-size: 18px;
+    padding: 22px 35px;
   }
 
   &:hover {
     border: 1px solid $accent;
-    padding: 16px 26px;
+    padding: 16px 19px;
   }
 }
 
@@ -60,9 +63,27 @@ body {
   padding-bottom: 30px;
   align-items: center;
   border-bottom: 2px solid $gray;
+  @include breakpoint($mobile-bp) {
+    position: fixed;
+    background-color: $primary;
+    width: 100%;
+    top: 0;
+    flex-wrap: wrap;
+  }
+
+  &-return{
+    font-size: 18px;
+    margin: 8px 0;
+    color: $white-txt;
+    text-decoration: underline;
+    &:hover{
+      color: $accent
+    }
+  }
 
   &-logo {
     display: flex;
+    align-items: center;
     &-title {
       font-family: "Raleway", sans-serif;
       font-size: 40px;
@@ -74,6 +95,10 @@ body {
 
       @include breakpoint($mobile-bp) {
         font-size: 28px;
+       
+      }
+      @include breakpoint($tablet-bp) {
+        font-size: 30px;
       }
 
       img {
@@ -93,7 +118,6 @@ body {
 
       &:hover {
         color: $accent;
-
         transition: all 0.2s ease-in-out;
       }
 
@@ -105,18 +129,32 @@ body {
 }
 
 //About
-
 .about {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-
   margin-top: 55px;
+  @include breakpoint($tablet-bp) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  & img {
+    width: 500px;
+    height: auto;
+    @include breakpoint($tablet-bp) {
+      width: 400px;
+    }
+  }
 
   &-info {
     display: flex;
     flex-direction: column;
     margin-left: 100px;
+    @include breakpoint($mobile-bp) {
+      margin-left: 0;
+    }
+
     &-title {
       font-size: 40px;
       font-style: italic;
@@ -125,18 +163,32 @@ body {
       font-family: "Raleway", sans-serif;
       color: $accent;
       margin-bottom: 50px;
+
+      @include breakpoint($tablet-bp) {
+        margin-top: 50px;
+        font-size: 50px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      @include breakpoint($mobile-bp) {
+        margin-top: 50px;
+        font-size: 37px;
+        margin-bottom: 20px;
+      }
     }
     &-txt {
       font-size: 22px;
       font-style: normal;
       font-weight: 700;
       line-height: 155%;
+
+      &--accent {
+        color: $accent;
+      }
     }
   }
 }
-
 //Catalog
-
 .catalog {
   margin-top: 30px;
 
@@ -144,8 +196,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-   justify-content: space-around;
-   align-items: baseline;
+    justify-content: space-around;
+    align-items: baseline;
     margin-top: 30px;
   }
 
@@ -153,6 +205,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 50px 0;
+
     &-item {
       padding: 30px 40px;
       background-color: $gray;
@@ -163,21 +216,22 @@ body {
 
       & + .active {
         background-color: $accent;
+        transition: all 0.7s ease-in-out;
+      }
+
+      @include breakpoint($mobile-bp) {
+        padding: 33px 24px;
       }
     }
   }
 
   &-item {
-    // background-color: $gray;
     padding: 30px;
     border-radius: 14px;
     margin-bottom: 30px;
     max-width: 370px;
-    transition: all 0.2s ease-in-out;
+    transition: all 1s ease-in-out;
     cursor: pointer;
-    &-div-img{
-      
-    }
     &-image {
       width: 300px;
       height: auto;
@@ -195,23 +249,11 @@ body {
 
     &-price {
       color: $accent;
-      margin: 10px 0;
+      margin: 10px 0 25px 0;
       font-size: 25px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
     }
-
-    & a {
-      background-color: $accent;
- 
-     border: none;
-     &:hover{
-      border: 1px solid $accent;
-      padding: 16px 26px;
-     }
-    }
-
-    
   }
 }
