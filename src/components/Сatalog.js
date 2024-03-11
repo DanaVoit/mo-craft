@@ -1,6 +1,6 @@
 import catalog from "../components/data/catalog.json";
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import Button from "./Button";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("all");
@@ -18,7 +18,7 @@ export default function Catalog() {
   };
 
   return (
-    <div id="catalog" className="container catalog">
+    <div className="container catalog">
       <div className="catalog-nav">
         <a
           className={`catalog-nav-item ${filter === "all" ? "active" : ""}`}
@@ -49,14 +49,18 @@ export default function Catalog() {
       <ul className="catalog-list">
         {filteredProducts().map((product) => (
           <li key={product.id} className="catalog-item">
-            <div className="catalog-item-div-img"  >
-              <img className="catalog-item-image" src={product.image}  alt={product.title} />
+            <div className="catalog-item-div-img">
+              <img
+                className="catalog-item-image"
+                src={product.image}
+                alt={product.title}
+              />
             </div>
             <div className="catalog-item-info">
               <h3 className="catalog-item-title">{product.title}</h3>
               <p className="catalog-item-price">{product.price}</p>
             </div>
-            <button className="button">Детальніше</button>
+            <Button text="Детальніше" />
           </li>
         ))}
       </ul>
