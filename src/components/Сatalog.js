@@ -1,8 +1,7 @@
 import catalog from "../components/data/catalog.json";
 import { useState } from "react";
 import Button from "./Button";
-import { useState } from "react";
-import Button from "./Button";
+
 
 export default function Catalog() {
   const [filter, setFilter] = useState("all");
@@ -63,7 +62,7 @@ export default function Catalog() {
                 src={product.image}
                 alt={product.title}
               />
-              </div>
+            </div>
             <div className="catalog-item-div-img">
               <img
                 className="catalog-item-image"
@@ -80,5 +79,6 @@ export default function Catalog() {
           </li>
         ))}
       </ul>
-      </div> 
-  )}
+    </div>
+  );
+}
