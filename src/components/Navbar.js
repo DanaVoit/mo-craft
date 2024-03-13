@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import logo from "../assets/img/logo.svg";
 
@@ -30,6 +31,12 @@ function Navbar() {
     }
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
     window.addEventListener("scroll", handleScroll);
 
     return () => {

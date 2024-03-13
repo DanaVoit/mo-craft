@@ -43,6 +43,7 @@ export default function About() {
             </span>{" "}
           </p>
         </div>
+        </div>
       </div>
     </div>
   );
