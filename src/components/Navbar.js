@@ -36,12 +36,6 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const isMobile = windowDimension <= 1020;
