@@ -63,18 +63,10 @@ export default function Catalog() {
                 alt={product.title}
               />
             </div>
-            <div className="catalog-item-div-img">
-              <img
-                className="catalog-item-image"
-                src={product.image}
-                alt={product.title}
-              />
-            </div>
             <div className="catalog-item-info">
               <h3 className="catalog-item-title">{product.title}</h3>
               <p className="catalog-item-price">{product.price}</p>
             </div>
-            <Button text="Детальніше" />
             <Button text="Детальніше" />
           </li>
         ))}
