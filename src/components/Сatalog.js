@@ -63,6 +63,7 @@ export default function Catalog() {
                 src={product.image}
                 alt={product.title}
               />
+              </div>
             <div className="catalog-item-div-img">
               <img
                 className="catalog-item-image"
@@ -79,6 +80,5 @@ export default function Catalog() {
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
+      </div> 
+  )}
