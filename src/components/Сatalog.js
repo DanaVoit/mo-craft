@@ -19,32 +19,38 @@ export default function Catalog() {
 
   return (
     <div className="container catalog">
-      <div className="catalog-nav">
-        <a
+      <ul className="catalog-nav">
+        <li
           className={`catalog-nav-item ${filter === "all" ? "active" : ""}`}
           onClick={() => handleFilterChange("all")}
         >
           Всі{" "}
-        </a>
-        <a
+        </li>
+        <li
           className={`catalog-nav-item ${filter === "ремені" ? "active" : ""}`}
           onClick={() => handleFilterChange("ремені")}
         >
           Ремені
-        </a>
-        <a
+        </li>
+        <li
           className={`catalog-nav-item ${filter === "гаманці" ? "active" : ""}`}
           onClick={() => handleFilterChange("гаманці")}
         >
           Гаманці
-        </a>
-        <a
+        </li>
+        <li
           className={`catalog-nav-item ${filter === "сумка" ? "active" : ""}`}
           onClick={() => handleFilterChange("сумка")}
         >
           Сумки
-        </a>
-      </div>
+        </li>
+        <li
+          className={`catalog-nav-item ${filter === "брелки" ? "active" : ""}`}
+          onClick={() => handleFilterChange("брелки")}
+        >
+          Брелки
+        </li>
+      </ul>
 
       <ul className="catalog-list">
         {filteredProducts().map((product) => (

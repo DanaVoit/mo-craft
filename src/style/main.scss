@@ -41,9 +41,6 @@ body {
   font-size: 18px;
   font-weight: 600;
 
-  @include breakpoint($mobile-bp) {
-  }
-
   @include breakpoint($tablet-bp) {
     font-size: 18px;
     padding: 22px 35px;
@@ -51,7 +48,10 @@ body {
 
   &:hover {
     border: 1px solid $accent;
-    padding: 16px 19px;
+    padding: 16px 26px;
+    @include breakpoint($tablet-bp) {
+      padding: 21px 34px;
+    }
   }
 }
 
@@ -71,13 +71,16 @@ body {
     flex-wrap: wrap;
   }
 
-  &-return{
+  &-return {
     font-size: 18px;
     margin: 8px 0;
     color: $white-txt;
     text-decoration: underline;
-    &:hover{
-      color: $accent
+    &:hover {
+      color: $accent;
+    }
+    &img {
+      color: $white-txt;
     }
   }
 
@@ -95,7 +98,6 @@ body {
 
       @include breakpoint($mobile-bp) {
         font-size: 28px;
-       
       }
       @include breakpoint($tablet-bp) {
         font-size: 30px;
@@ -188,6 +190,8 @@ body {
     }
   }
 }
+
+
 //Catalog
 .catalog {
   margin-top: 30px;
@@ -220,7 +224,8 @@ body {
       }
 
       @include breakpoint($mobile-bp) {
-        padding: 33px 24px;
+        padding: 33px 19px;
+        font-size: 12px;
       }
     }
   }
@@ -255,5 +260,43 @@ body {
       font-weight: 700;
       line-height: normal;
     }
+  }
+}
+//footer
+
+.footer {
+  color: $white-txt;
+  width: 100%;
+  padding: 15px 0 5px 0;
+  border-top: 1px solid $gray;
+  &-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &-social {
+      display: flex;
+      justify-content: space-between;
+      & li {
+        margin-right: 25px;
+      }
+    }
+  }
+  &-logo {
+    display: flex;
+    align-items: center;
+    & > img {
+      color: $white-txt;
+    }
+  }
+
+  &-title {
+    color: $accent;
+    font-family: "Raleway", sans-serif;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: 15px;
   }
 }
