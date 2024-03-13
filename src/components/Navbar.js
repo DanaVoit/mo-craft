@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import logo from "../assets/img/logo.svg";
-import returnButton from "../assets/img/Expand_left_double.svg"
 
 function Navbar() {
   const [windowDimension, setWindowDimension] = useState(null);
-  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -17,10 +16,16 @@ function Navbar() {
     }
 
     function handleScroll() {
-      if (window.scrollY > 0) {
-        setShowScrollButton(true);
+      const catalogSection = document.getElementById("catalog");
+      if (!catalogSection) return;
+
+      const catalogSectionPosition = catalogSection.offsetTop;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition >= catalogSectionPosition) {
+        setShowNavbar(true);
       } else {
-        setShowScrollButton(false);
+        setShowNavbar(false);
       }
     }
 
@@ -31,37 +36,31 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const isMobile = windowDimension <= 1020;
 
-  return isMobile ? (
-    <header className="container header">
+  return (
+    <header className={`container header ${showNavbar ? "show" : ""}`}>
       <div className="header-logo">
-        <img src={logo} width={26} alt="Logo" />
-        <span className="header-logo-title">MO&Craft</span>
-      </div>
-      <Button
-        text="Напиши нам"
-        href="https://linktr.ee/mykolabms?fbclid=IwAR2QkY5twHhM8sxCaaVCwG8PhdH_upFxFDYUDKRGpB5WbXe0q2Fpfr5Zs-I"
-      />
-      {showScrollButton && (
-        <span className="header-return">
-          <a href="#catalog">До каталогу <img src={returnButton}/></a>
+        <img src={logo} width={isMobile ? 26 : 36} alt="Logo" />
+        <span className="header-logo-title">
+          {isMobile ? "MO&Craft" : "MO&Craft - Leather craft"}
         </span>
-      )}
-    </header>
-  ) : (
-    <header className="container header">
-      <div className="header-logo">
-        <img src={logo} width={36} alt="Logo" />
-        <span className="header-logo-title">MO&Craft - Leather craft</span>
       </div>
+
       <Button
         text="Напиши нам"
         href="https://linktr.ee/mykolabms?fbclid=IwAR2QkY5twHhM8sxCaaVCwG8PhdH_upFxFDYUDKRGpB5WbXe0q2Fpfr5Zs-I"
       />
-      {showScrollButton && (
+
+      {showNavbar && (
         <span className="header-return">
           <a href="#catalog">До каталогу</a>
         </span>
