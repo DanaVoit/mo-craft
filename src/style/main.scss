@@ -23,11 +23,6 @@
     max-width: 1200px;
     padding: 15px;
   }
-
-  @include breakpoint($big-screen-bp) {
-    max-width: 1200px;
-    padding: 15px;
-  }
 }
 
 body {
@@ -51,15 +46,25 @@ body {
   @include breakpoint($tablet-bp) {
     font-size: 18px;
     padding: 22px 35px;
-    font-size: 18px;
-    padding: 22px 35px;
+  
   }
+
+  @include breakpoint($mobile-bp) {
+    font-size: 16px;
+    padding: 20px 30px;
+   
+  }
+
 
   &:hover {
     border: 1px solid $accent;
     padding: 16px 26px;
     @include breakpoint($tablet-bp) {
       padding: 21px 34px;
+      @include breakpoint($mobile-bp) {
+        padding: 19px 29px;
+       
+      }
     }
   }
 }
@@ -72,13 +77,18 @@ body {
   padding-bottom: 30px;
   align-items: center;
   border-bottom: 2px solid $gray;
+  z-index: 1000;
+  
   @include breakpoint($mobile-bp) {
     position: fixed;
     background-color: $primary;
     width: 100%;
     top: 0;
+    padding: 20px;
     flex-wrap: wrap;
   }
+
+  
 
   &-return {
     font-size: 18px;
@@ -112,30 +122,19 @@ body {
       @include breakpoint($tablet-bp) {
         font-size: 30px;
       }
+      @include breakpoint($small-mobile-bp) {
+        font-size: 24px;
+      }
 
       img {
         width: 20px;
       }
     }
   }
-
-  &-nav {
-    display: flex;
-    li {
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin-right: 35px;
-
-      &:hover {
-        color: $accent;
-        transition: all 0.2s ease-in-out;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
+  & > .button {
+    @include breakpoint($mobile-bp) {
+      padding: 14px 20px;
+      font-size: 16px;
     }
   }
 }
@@ -150,24 +149,18 @@ body {
     justify-content: center;
     flex-wrap: wrap;
   }
-
+  @include breakpoint($mobile-bp) {
+    margin-top: 140px;
+  }
   & img {
     width: 500px;
     height: auto;
-    @include breakpoint($tablet-bp) {
-      width: 400px;
+    margin: 0 auto;
+    @include breakpoint($mobile-bp) {
+      width: 450px;
     }
-  }
-  @include breakpoint($tablet-bp) {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  & img {
-    width: 500px;
-    height: auto;
-    @include breakpoint($tablet-bp) {
-      width: 400px;
+    @include breakpoint($small-mobile-bp) {
+      width: 300px;
     }
   }
 
@@ -198,22 +191,14 @@ body {
         margin-bottom: 20px;
         text-align: center;
       }
-      @include breakpoint($mobile-bp) {
-        margin-top: 50px;
-        font-size: 37px;
-        margin-bottom: 20px;
-      }
 
-      @include breakpoint($tablet-bp) {
-        margin-top: 50px;
-        font-size: 50px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
       @include breakpoint($mobile-bp) {
         margin-top: 50px;
         font-size: 37px;
         margin-bottom: 20px;
+      }
+      @include breakpoint($small-mobile-bp) {
+        font-size: 30px;
       }
     }
     &-txt {
@@ -226,13 +211,59 @@ body {
         color: $accent;
       }
 
-      &--accent {
-        color: $accent;
+      @include breakpoint($small-mobile-bp) {
+        font-size: 18px;
       }
     }
   }
+
+  // slider
+  .slick-dots {
+    top: -40px;
+
+    & li {
+      &.slick-active {
+        & button::before {
+          color: $white-txt;
+
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .slick-dots {
+    & li {
+      & button::before {
+        color: $white-txt;
+      }
+    }
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
 }
 
+//Slider
+.slick-slider {
+  max-width: 100%;
+  width: 500px;
+  & > button {
+    display: none;
+  }
+}
+
+.slider-container {
+  max-width: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.slider-image {
+  max-width: 100%;
+  height: auto;
+}
 
 //Catalog
 .catalog {
@@ -254,23 +285,27 @@ body {
     justify-content: center;
     margin: 50px 0;
 
-
     &-item {
-      padding: 30px 40px;
+      padding: 45px 0;
+      width: 120px;
+      height: 120px;
+      align-content: center;
+      text-align: center;
       background-color: $gray;
       border: 1px solid $primary;
-      display: flex;
-      flex-direction: column;
-      max-width: 150px;
+      cursor: pointer;
+      text-transform: uppercase;
 
       & + .active {
         background-color: $accent;
-        transition: all 0.7s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
 
       @include breakpoint($mobile-bp) {
-        padding: 33px 19px;
         font-size: 12px;
+        width: 80px;
+        height: 80px;
+        padding: 32px 0;
       }
     }
   }
@@ -280,7 +315,7 @@ body {
     border-radius: 14px;
     margin-bottom: 30px;
     max-width: 370px;
-    transition: all 1s ease-in-out;
+
     transition: all 1s ease-in-out;
     cursor: pointer;
     &-image {
@@ -296,16 +331,22 @@ body {
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @include breakpoint($mobile-bp) {
+        font-size: 18px;
+        }
     }
 
     &-price {
       color: $accent;
       margin: 10px 0 25px 0;
-      margin: 10px 0 25px 0;
       font-size: 25px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+
+      @include breakpoint($mobile-bp) {
+      font-size: 22px;
+      }
     }
   }
 }

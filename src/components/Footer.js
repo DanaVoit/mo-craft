@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-inner container">
         <div className="footer-logo">
           <img src={logo} width={36} alt="Logo" />
-          <span className="footer-title">MO&Craft</span>
+          <span className="footer-title">M&O Craft</span>
         </div>
         <ul className="footer-inner-social">
           <li>

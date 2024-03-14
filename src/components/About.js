@@ -1,12 +1,16 @@
-import about from "../assets/img/about.webp";
+import MultipleImageSlider from "./Slider";
+import about from "../assets/img/about/about.webp";
+import about2 from "../assets/img/about/about2.webp";
+import about3 from "../assets/img/about/about3.webp";
+
+const aboutImages = [about, about2, about3];
 
 export default function About() {
   return (
     <div className="container about">
-      <img src={about} alt={"Portrait"} />
-
+      <MultipleImageSlider images={aboutImages} />
       <div className="about-info">
-        <h3 className="about-info-title">твій стиль - твої правила</h3>
+        <h1 className="about-info-title">твій стиль - твої правила</h1>
         <div className="about-info-txt">
           <p>
             Зустрічайте{" "}
@@ -43,7 +47,7 @@ export default function About() {
             </span>{" "}
           </p>
         </div>
-        </div>
       </div>
+    </div>
   );
 }
