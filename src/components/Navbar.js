@@ -45,7 +45,7 @@ function Navbar() {
       <div className="header-logo">
         <img src={logo} width={isMobile ? 26 : 36} alt="Logo" />
         <span className="header-logo-title">
-          {isMobile ? "MO&Craft" : "MO&Craft - Leather craft"}
+          {isMobile ? "M&O Craft" : "M&O Craft - Leather craft"}
         </span>
       </div>
 

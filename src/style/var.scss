@@ -6,7 +6,7 @@ $accent: #EF7F1A;
 $big-screen-bp: 1191px;
 $tablet-bp: 991px;
 $mobile-bp: 704px;
-
+$small-mobile-bp: 404px;
 
 @mixin breakpoint($bp){
 	
