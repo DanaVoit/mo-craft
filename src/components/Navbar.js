@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "./Button";
+import Button from "./partComponents/Button";
 import logo from "../assets/img/logo.svg";
 
 function Navbar() {

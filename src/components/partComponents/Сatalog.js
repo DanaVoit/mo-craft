@@ -1,4 +1,4 @@
-import catalog from "../components/data/catalog.json";
+import catalog from "../data/catalog.json";
 import { useState } from "react";
 import Button from "./Button";
 

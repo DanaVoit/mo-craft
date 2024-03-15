@@ -1,7 +1,7 @@
 import MultipleImageSlider from "./Slider";
-import about from "../assets/img/about/about.webp";
-import about2 from "../assets/img/about/about2.webp";
-import about3 from "../assets/img/about/about3.webp";
+import about from "../../assets/img/about/about.webp";
+import about2 from "../../assets/img/about/about2.webp";
+import about3 from "../../assets/img/about/about3.webp"
 
 const aboutImages = [about, about2, about3];
 
