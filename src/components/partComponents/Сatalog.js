@@ -1,10 +1,11 @@
 import catalog from "../data/catalog.json";
 import { useState } from "react";
 import Button from "./Button";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("all");
+  const navigate = useNavigate();
 
   const filteredProducts = () => {
     if (filter === "all") {
@@ -18,39 +19,22 @@ export default function Catalog() {
     setFilter(newFilter);
   };
 
+  const handleProductClick = (productId) => {
+    navigate(`/path/to/${productId}`);
+  };
+
   return (
     <div className="container catalog">
       <ul className="catalog-nav">
-        <li
-          className={`catalog-nav-item ${filter === "all" ? "active" : ""}`}
-          onClick={() => handleFilterChange("all")}
-        >
-          Всі{" "}
-        </li>
-        <li
-          className={`catalog-nav-item ${filter === "ремені" ? "active" : ""}`}
-          onClick={() => handleFilterChange("ремені")}
-        >
-          Ремені
-        </li>
-        <li
-          className={`catalog-nav-item ${filter === "гаманці" ? "active" : ""}`}
-          onClick={() => handleFilterChange("гаманці")}
-        >
-          Гаманці
-        </li>
-        <li
-          className={`catalog-nav-item ${filter === "сумка" ? "active" : ""}`}
-          onClick={() => handleFilterChange("сумка")}
-        >
-          Сумки
-        </li>
-        <li
-          className={`catalog-nav-item ${filter === "брелки" ? "active" : ""}`}
-          onClick={() => handleFilterChange("брелки")}
-        >
-          Брелки
-        </li>
+        {["all", "ремені", "гаманці", "сумка", "брелки"].map((item) => (
+          <li
+            key={item}
+            className={`catalog-nav-item ${filter === item ? "active" : ""}`}
+            onClick={() => handleFilterChange(item)}
+          >
+            {item === "all" ? "Всі" : item}
+          </li>
+        ))}
       </ul>
 
       <ul className="catalog-list">
@@ -67,7 +51,10 @@ export default function Catalog() {
               <h3 className="catalog-item-title">{product.title}</h3>
               <p className="catalog-item-price">{product.price}</p>
             </div>
-            <Button text="Детальніше" />
+            <Button
+              onClick={() => handleProductClick(product.id)}
+              text="Детальніше"
+            />
           </li>
         ))}
       </ul>
