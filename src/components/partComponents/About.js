@@ -8,11 +8,11 @@ const aboutImages = [about, about2, about3];
 export default function About() {
   return (
     <div className="container about">
-      <MultipleImageSlider images={aboutImages} />
+      <MultipleImageSlider images={aboutImages}  />
       <div className="about-info">
         <h1 className="about-info-title">твій стиль - твої правила</h1>
         <div className="about-info-txt">
-          <p>
+          <p> 
             Зустрічайте{" "}
             <span className="about-info-txt about-info-txt--accent">
               M&O Craft

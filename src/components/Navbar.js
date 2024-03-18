@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "./partComponents/Button";
 import logo from "../assets/img/logo.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [windowDimension, setWindowDimension] = useState(null);
@@ -42,14 +43,16 @@ function Navbar() {
 
   return (
     <header className={`container header ${showNavbar ? "show" : ""}`}>
-      <div className="header-logo">
-        <img src={logo} width={isMobile ? 26 : 36} alt="Logo" />
-        <span className="header-logo-title">
-          {isMobile ? "M&O Craft" : "M&O Craft - Leather craft"}
-        </span>
-      </div>
+        <Link to="/" className="header-logo">
+          <img src={logo} width={isMobile ? 26 : 36} alt="Logo" />
+          <span className="header-logo-title">
+            {isMobile ? "M&O Craft" : "M&O Craft - Leather craft"}
+          </span>
+        </Link>
+  
 
       <Button
+        target="_blank"
         text="Напиши нам"
         href="https://linktr.ee/mykolabms?fbclid=IwAR2QkY5twHhM8sxCaaVCwG8PhdH_upFxFDYUDKRGpB5WbXe0q2Fpfr5Zs-I"
       />

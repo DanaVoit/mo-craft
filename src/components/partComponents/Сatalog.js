@@ -1,11 +1,19 @@
 import catalog from "../data/catalog.json";
 import { useState } from "react";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import CatalogItem from "./CatalogItem";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("all");
   const navigate = useNavigate();
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
 
   const filteredProducts = () => {
     if (filter === "all") {
@@ -13,14 +21,6 @@ export default function Catalog() {
     } else {
       return catalog.filter((product) => product.category === filter);
     }
-  };
-
-  const handleFilterChange = (newFilter) => {
-    setFilter(newFilter);
-  };
-
-  const handleProductClick = (productId) => {
-    navigate(`/path/to/${productId}`);
   };
 
   return (
@@ -39,23 +39,11 @@ export default function Catalog() {
 
       <ul className="catalog-list">
         {filteredProducts().map((product) => (
-          <li key={product.id} className="catalog-item">
-            <div className="catalog-item-div-img">
-              <img
-                className="catalog-item-image"
-                src={product.image}
-                alt={product.title}
-              />
-            </div>
-            <div className="catalog-item-info">
-              <h3 className="catalog-item-title">{product.title}</h3>
-              <p className="catalog-item-price">{product.price}</p>
-            </div>
-            <Button
-              onClick={() => handleProductClick(product.id)}
-              text="Детальніше"
-            />
-          </li>
+          <CatalogItem
+            key={product.id}
+            product={product}
+            onClick={handleProductClick}
+          />
         ))}
       </ul>
     </div>
