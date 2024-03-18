@@ -1,18 +1,18 @@
 import MultipleImageSlider from "./Slider";
-import about from "../assets/img/about/about.webp";
-import about2 from "../assets/img/about/about2.webp";
-import about3 from "../assets/img/about/about3.webp";
+import about from "../../assets/img/about/about.webp";
+import about2 from "../../assets/img/about/about2.webp";
+import about3 from "../../assets/img/about/about3.webp"
 
 const aboutImages = [about, about2, about3];
 
 export default function About() {
   return (
     <div className="container about">
-      <MultipleImageSlider images={aboutImages} />
+      <MultipleImageSlider images={aboutImages}  />
       <div className="about-info">
         <h1 className="about-info-title">твій стиль - твої правила</h1>
         <div className="about-info-txt">
-          <p>
+          <p> 
             Зустрічайте{" "}
             <span className="about-info-txt about-info-txt--accent">
               M&O Craft

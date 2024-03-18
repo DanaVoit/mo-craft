@@ -1,0 +1,18 @@
+
+[
+    {
+      "key": "Instagram",
+      "url": "https://www.instagram.com/m_o_craft?igshid=NGVhN2U2NjQ0Yg%3D%3D",
+      "icon": "/img/social/Instagram.svg" 
+    },
+    {
+      "key": "Facebook",
+      "url": "https://www.facebook.com/mandocrafts",
+      "icon": "/img/social/Tik Tok.svg"
+    },
+    {
+      "key": "TikTok",
+      "url": "https://www.tiktok.com/@m_o_craft",
+      "icon": "/img/social/Facebook.svg"
+    }
+  ]

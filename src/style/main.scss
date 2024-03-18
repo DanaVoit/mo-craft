@@ -141,6 +141,7 @@ body {
 
 //About
 .about {
+  cursor:none;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -319,10 +320,11 @@ body {
     transition: all 1s ease-in-out;
     cursor: pointer;
     &-image {
-      width: 300px;
+  
       height: auto;
       display: block;
       margin-bottom: 30px;
+     
     }
 
     &-title {
@@ -387,4 +389,94 @@ body {
     font-weight: 400;
     margin-left: 15px;
   }
+}
+
+//product
+
+.product{
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+
+
+  &-about{
+    display: flex;
+    flex-direction: row;
+    @include breakpoint($tablet-bp) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+   
+      }
+    &-info{
+      margin-left: 150px;
+      @include breakpoint($tablet-bp) {
+       margin-left: 0;
+       margin-top: 20px;
+        }
+      & h2{
+        font-size: 40px;
+        @include breakpoint($mobile-bp) {
+          font-size: 30px
+          ;
+           }
+      }
+      &-dscrpt{
+        opacity: 0.8;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 1.35;
+        margin: 15px 0;
+        @include breakpoint($mobile-bp) {
+          font-size: 18px
+          ;
+           }
+      }
+  
+      &-price{
+        color: $accent;
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        @include breakpoint($mobile-bp) {
+          font-size: 30px
+          ;
+           }
+  
+      }
+     
+
+    }
+    
+  }
+ &-details{
+  border-top: 1px $gray solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding-top: 20px;
+ 
+  &-item{
+    break-inside: avoid;
+
+    &-title{
+      color: $accent;
+      font-weight: 600;
+      font-size: 25px;
+      @include breakpoint($mobile-bp) {
+        font-size: 22px;
+        ;
+         }
+    }
+    &-text{
+      font-weight: 600;
+      font-size: 20px;
+      @include breakpoint($mobile-bp) {
+        font-size: 18px
+        ;
+         }
+    }
+  }
+ }
+
 }

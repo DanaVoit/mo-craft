@@ -1,18 +1,23 @@
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Navbar from './components/Navbar';
-import About from './components/About';
-import Catalog from './components/Сatalog';
-import Footer from "./components/Footer"
+import ProductDetails from './components/partComponents/ProductDetails';
+import Footer from './components/Footer';
+import Main from './components/Main';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
         <Navbar/>
-        <About/>
-        <Catalog/>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
+        </Routes>
         <Footer/>
-    </div>
+      </div>
+    </Router>
   );
 }
 
