@@ -6,7 +6,7 @@ export default function CatalogItem({ product, onClick }) {
       <div className="catalog-item-div-img">
         <img
           className="catalog-item-image"
-          src={product.image}
+          src={product.mainImage}
           alt={product.title}
           loading="lazy"
           width={300}
