@@ -219,7 +219,6 @@ body {
       &.slick-active {
         & button::before {
           color: $white-txt;
-
           opacity: 1;
         }
       }
@@ -394,8 +393,11 @@ body {
     & img {
       width: 480px;
       margin: 0 auto;
-      @include breakpoint($tablet-bp) {
+      @include breakpoint($mobile-bp) {
         width: 320px;
+      }
+      @include breakpoint($small-mobile-bp) {
+        width: 220px;
       }
     }
     @include breakpoint($tablet-bp) {
@@ -464,4 +466,23 @@ body {
       }
     }
   }
+  .slick-arrow{
+    z-index: 1000;
+    color: #fff;
+  }
+  .slick-prev {
+    @include breakpoint($tablet-bp) {
+      left: -1px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .slick-next {
+    @include breakpoint($tablet-bp) {
+      right: 0;
+    }
+  }
+ 
 }
+
