@@ -46,15 +46,12 @@ body {
   @include breakpoint($tablet-bp) {
     font-size: 18px;
     padding: 22px 35px;
-  
   }
 
   @include breakpoint($mobile-bp) {
     font-size: 16px;
     padding: 20px 30px;
-   
   }
-
 
   &:hover {
     border: 1px solid $accent;
@@ -63,7 +60,6 @@ body {
       padding: 21px 34px;
       @include breakpoint($mobile-bp) {
         padding: 19px 29px;
-       
       }
     }
   }
@@ -78,7 +74,7 @@ body {
   align-items: center;
   border-bottom: 2px solid $gray;
   z-index: 1000;
-  
+
   @include breakpoint($mobile-bp) {
     position: fixed;
     background-color: $primary;
@@ -87,8 +83,6 @@ body {
     padding: 20px;
     flex-wrap: wrap;
   }
-
-  
 
   &-return {
     font-size: 18px;
@@ -108,10 +102,9 @@ body {
     align-items: center;
     align-items: center;
     &-title {
-      font-family: "Raleway", sans-serif;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       font-size: 40px;
-      font-style: italic;
-      font-weight: 400;
+      font-weight: 600;
       line-height: normal;
       color: $accent;
       margin-left: 20px;
@@ -141,7 +134,7 @@ body {
 
 //About
 .about {
-  cursor:none;
+  cursor: none;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -182,9 +175,9 @@ body {
       font-style: italic;
       font-weight: 600;
       line-height: normal;
-      font-family: "Raleway", sans-serif;
+
       color: $accent;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
 
       @include breakpoint($tablet-bp) {
         margin-top: 50px;
@@ -226,7 +219,6 @@ body {
       &.slick-active {
         & button::before {
           color: $white-txt;
-
           opacity: 1;
         }
       }
@@ -320,11 +312,9 @@ body {
     transition: all 1s ease-in-out;
     cursor: pointer;
     &-image {
-  
       height: auto;
       display: block;
       margin-bottom: 30px;
-     
     }
 
     &-title {
@@ -335,7 +325,7 @@ body {
       line-height: normal;
       @include breakpoint($mobile-bp) {
         font-size: 18px;
-        }
+      }
     }
 
     &-price {
@@ -347,7 +337,7 @@ body {
       line-height: normal;
 
       @include breakpoint($mobile-bp) {
-      font-size: 22px;
+        font-size: 22px;
       }
     }
   }
@@ -383,9 +373,8 @@ body {
 
   &-title {
     color: $accent;
-    font-family: "Raleway", sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 26px;
-    font-style: italic;
     font-weight: 400;
     margin-left: 15px;
   }
@@ -393,90 +382,107 @@ body {
 
 //product
 
-.product{
+.product {
   display: flex;
   flex-direction: column;
   padding: 50px 0;
-
-
-  &-about{
+  &-about {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    & img {
+      width: 480px;
+      margin: 0 auto;
+      @include breakpoint($mobile-bp) {
+        width: 320px;
+      }
+      @include breakpoint($small-mobile-bp) {
+        width: 220px;
+      }
+    }
     @include breakpoint($tablet-bp) {
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 40px;
-   
-      }
-    &-info{
+    }
+    &-info {
       margin-left: 150px;
       @include breakpoint($tablet-bp) {
-       margin-left: 0;
-       margin-top: 20px;
-        }
-      & h2{
+        margin-left: 0;
+        margin-top: 20px;
+      }
+      & h2 {
         font-size: 40px;
         @include breakpoint($mobile-bp) {
-          font-size: 30px
-          ;
-           }
+          font-size: 30px;
+        }
       }
-      &-dscrpt{
+      &-dscrpt {
         opacity: 0.8;
         font-size: 20px;
         font-style: italic;
         line-height: 1.35;
         margin: 15px 0;
         @include breakpoint($mobile-bp) {
-          font-size: 18px
-          ;
-           }
+          font-size: 18px;
+        }
       }
-  
-      &-price{
+
+      &-price {
         color: $accent;
         font-size: 35px;
         font-weight: 700;
         margin-bottom: 40px;
         @include breakpoint($mobile-bp) {
-          font-size: 30px
-          ;
-           }
-  
+          font-size: 30px;
+        }
       }
-     
-
     }
-    
   }
- &-details{
-  border-top: 1px $gray solid;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  padding-top: 20px;
+  &-details {
+    border-top: 1px $gray solid;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding-top: 20px;
+
+    &-item {
+      break-inside: avoid;
+
+      &-title {
+        color: $accent;
+        font-weight: 600;
+        font-size: 25px;
+        @include breakpoint($mobile-bp) {
+          font-size: 22px;
+        }
+      }
+      &-text {
+        font-weight: 600;
+        font-size: 20px;
+        @include breakpoint($mobile-bp) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .slick-arrow{
+    z-index: 1000;
+    color: #fff;
+  }
+  .slick-prev {
+    @include breakpoint($tablet-bp) {
+      left: -1px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .slick-next {
+    @include breakpoint($tablet-bp) {
+      right: 0;
+    }
+  }
  
-  &-item{
-    break-inside: avoid;
-
-    &-title{
-      color: $accent;
-      font-weight: 600;
-      font-size: 25px;
-      @include breakpoint($mobile-bp) {
-        font-size: 22px;
-        ;
-         }
-    }
-    &-text{
-      font-weight: 600;
-      font-size: 20px;
-      @include breakpoint($mobile-bp) {
-        font-size: 18px
-        ;
-         }
-    }
-  }
- }
-
 }
+

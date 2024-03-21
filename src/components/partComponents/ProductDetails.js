@@ -1,17 +1,19 @@
 import { useParams } from "react-router-dom";
 import catalog from "../data/catalog.json";
 import Button from "./Button";
+import MultipleImageSlider from "./Slider"
 
 export default function ProductDetails() {
   const { productId } = useParams();
   const product = catalog.find((item) => item.id === productId);
 
+  const productImages = product.images;
   return (
     <div className="container">
       {product && (
         <div className="product">
           <div className="product-about">
-            <img src={product.image} width={400}  alt={product.title} />
+          <MultipleImageSlider images={productImages}  />
             <div className="product-about-info">
               <h2>{product.title}</h2>
               <p className="product-about-info-dscrpt">{product.description}</p>
