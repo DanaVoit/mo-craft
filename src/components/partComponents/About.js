@@ -10,7 +10,7 @@ export default function About() {
     <div className="container about">
       <MultipleImageSlider images={aboutImages}  />
       <div className="about-info">
-        <h1 className="about-info-title">твій стиль - твої правила</h1>
+        <h1 className="about-info-title">Твій стиль - твої правила</h1>
         <div className="about-info-txt">
           <p> 
             Зустрічайте{" "}

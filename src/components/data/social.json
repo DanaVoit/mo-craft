@@ -6,13 +6,13 @@
       "icon": "/img/social/Instagram.svg" 
     },
     {
-      "key": "Facebook",
-      "url": "https://www.facebook.com/mandocrafts",
+      "key": "TikTok",
+      "url": "https://www.tiktok.com/@m_o_craft",
       "icon": "/img/social/Tik Tok.svg"
     },
     {
-      "key": "TikTok",
-      "url": "https://www.tiktok.com/@m_o_craft",
+      "key": "Facebook",
+      "url": "https://www.facebook.com/mandocrafts",
       "icon": "/img/social/Facebook.svg"
     }
   ]
